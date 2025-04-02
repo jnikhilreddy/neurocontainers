@@ -1,0 +1,11 @@
+{
+  "image": "vnmd/neurodesktop:latest",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+      ]
+    }
+  }
+}
