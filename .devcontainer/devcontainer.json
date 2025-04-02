@@ -3,8 +3,19 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "AutomataLabs.copilot-mcp",
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "AutomataLabs.copilot-mcp"
       ]
     }
-  }
+  },
+  "features": {
+    "ghcr.io/wxw-matt/devcontainer-features/command_runner:0": {},
+    "ghcr.io/va-h/devcontainers-features/uv:1": {
+      "shellautocompletion": true,
+      "version": "latest"
+    }
+  },
+  "forwardPorts": [8888],
+  "postCreateCommand": "pip install 'mcp[filesystem,fetch]'"
 }
