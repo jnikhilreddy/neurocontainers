@@ -3,8 +3,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-python.python",
-        "ms-toolsai.jupyter"
+        "AutomataLabs.copilot-mcp",
       ]
     }
   }
