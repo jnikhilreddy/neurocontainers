@@ -1,0 +1,13 @@
+name: gradvenv
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - pip=23.3.2
+  - fpdf
+  - imageio
+  - pypng
+  - freetype-py
+  - pip:
+    - dipy==1.5.0
