@@ -12,22 +12,32 @@ build:
 
   directives:
     - install: wget curl git
+    # Clean apt cache after install
+    - run: apt-get clean && rm -rf /var/lib/apt/lists/*
 
     - template:
         name: miniconda
         version: latest
         conda_install: "python=3.11 numpy scipy"
         pip_install: "git+https://github.com/physimals/hcp-asl.git nibabel"
+    # Clean conda and pip cache after template
+    - run: conda clean --all -y && rm -rf /root/.cache/pip
 
     - template:
         name: fsl
         version: 6.0.5.1
+    # Clean apt cache and temp files after template (assuming apt usage)
+    - run: apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
     - template:
         name: freesurfer
         version: 7.4.1
+    # Clean temp files after template
+    - run: rm -rf /tmp/* /var/tmp/*
 
     - install: connectome-workbench
+    # Clean apt cache after install
+    - run: apt-get clean && rm -rf /var/lib/apt/lists/*
 
     - run:
         - git clone https://github.com/Washington-University/HCPpipelines.git /opt/HCPpipelines
